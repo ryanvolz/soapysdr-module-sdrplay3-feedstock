@@ -1,0 +1,55 @@
+{% set version = "0.4.2" %}
+
+package:
+  name: soapysdr-module-sdrplay3
+  version: {{ version }}
+
+source:
+  url: https://github.com/pothosware/SoapySDRPlay3/archive/refs/tags/soapy-sdrplay3-{{ version }}.tar.gz
+  sha256: 58e604cba8ddea7b8e966a43beb7a95c920b431389167083573cc51eb665b896
+
+build:
+  number: 0
+  run_exports:
+    - {{ pin_subpackage('soapysdr-module-sdrplay3', max_pin='x.x') }}
+  missing_dso_whitelist:
+    - "*/libsdrplay_api.*"  # [unix]
+    - "*/sdrplay_api.lib"  # [win]
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - 7zip  # [win]
+    - cmake
+    - ninja
+    - p7zip  # [unix]
+    - pkg-config
+    - wget  # [unix]
+  host:
+    - soapysdr
+
+test:
+  commands:
+    # verify that libraries get installed
+    - test -f $PREFIX/lib/SoapySDR/modules{{ soapysdr }}/libsdrPlaySupport.so  # [not win]
+    - if not exist %PREFIX%\\Library\\lib\\SoapySDR\\modules{{ soapysdr }}\\sdrPlaySupport.dll exit 1  # [win]
+
+    # show info to see if module is detected
+    - SoapySDRUtil --info
+    - SoapySDRUtil --info | grep sdrPlaySupport  # [not win]
+    - SoapySDRUtil --info | findstr /l sdrPlaySupport  # [win]
+
+about:
+  home: https://github.com/pothosware/SoapySDRPlay3/wiki
+  license: MIT
+  license_file: LICENSE.txt
+  summary: 'Soapy SDR plugin for SDRPlay APIv3'
+  description: |
+    The Soapy SDRPlay project provides a plugin module to use SDRPlay radio
+    devices within the SoapySDR API and software that supports SoapySDR.
+  doc_url: https://github.com/pothosware/SoapySDRPlay3/wiki
+  dev_url: https://github.com/pothosware/SoapySDRPlay3
+
+extra:
+  recipe-maintainers:
+    - ryanvolz
