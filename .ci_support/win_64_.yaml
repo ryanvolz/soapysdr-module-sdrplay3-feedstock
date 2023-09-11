@@ -1,0 +1,12 @@
+channel_sources:
+- conda-forge
+channel_targets:
+- ryanvolz main
+cxx_compiler:
+- vs2019
+sdrplay_api_version:
+- '3.11'
+soapysdr:
+- '0.8'
+target_platform:
+- win-64
