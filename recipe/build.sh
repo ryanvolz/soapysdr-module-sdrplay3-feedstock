@@ -27,7 +27,7 @@ elif [[ $target_platform == linux-aarch64 ]] ; then
     )
 elif [[ $target_platform == osx-64 ]] ; then
     wget "https://www.sdrplay.com/software/SDRplayAPI-macos-installer-universal-${sdrplay_api_version}.pkg"
-    installer -pkg "SDRplayAPI-macos-installer-universal-${sdrplay_api_version}.pkg" -target /
+    sudo installer -pkg "SDRplayAPI-macos-installer-universal-${sdrplay_api_version}.pkg" -target /
 #     installer -pkg "SDRplayAPI-macos-installer-universal-${sdrplay_api_version}.pkg" -target ./
 #     cmake_config_args+=(
 #         -DLIBSDRPLAY_INCLUDE_DIRS="$SRC_DIR/sdrplay_api/inc"
