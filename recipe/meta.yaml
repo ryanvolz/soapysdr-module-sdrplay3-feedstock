@@ -14,7 +14,7 @@ build:
     - {{ pin_subpackage('soapysdr-module-sdrplay3', max_pin='x.x') }}
   missing_dso_whitelist:
     - "*/libsdrplay_api.*"  # [unix]
-    - "*/sdrplay_api.lib"  # [win]
+    - "*/sdrplay_api.dll"  # [win]
 
 requirements:
   build:
