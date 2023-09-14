@@ -15,6 +15,7 @@ build:
   missing_dso_whitelist:
     - "*/libsdrplay_api*"  # [unix]
     - "*/sdrplay_api.dll"  # [win]
+  binary_relocation: false  # [osx]
 
 requirements:
   build:
