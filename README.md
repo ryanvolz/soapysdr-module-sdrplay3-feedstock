@@ -7,13 +7,13 @@ Home: https://github.com/pothosware/SoapySDRPlay3/wiki
 
 Package license: MIT
 
-Summary: Soapy SDR plugin for SDRPlay APIv3
+Summary: Soapy SDR plugin for SDRplay APIv3
 
 Development: https://github.com/pothosware/SoapySDRPlay3
 
 Documentation: https://github.com/pothosware/SoapySDRPlay3/wiki
 
-The Soapy SDRPlay project provides a plugin module to use SDRPlay radio
+The Soapy SDRplay project provides a plugin module to use SDRplay radio
 devices within the SoapySDR API and software that supports SoapySDR.
 
 

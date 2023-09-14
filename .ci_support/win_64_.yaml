@@ -1,10 +1,10 @@
 channel_sources:
-- conda-forge
+- conda-forge,ryanvolz
 channel_targets:
 - ryanvolz main
 cxx_compiler:
 - vs2019
-sdrplay_api_version:
+sdrplay_api:
 - '3.11'
 soapysdr:
 - '0.8'
