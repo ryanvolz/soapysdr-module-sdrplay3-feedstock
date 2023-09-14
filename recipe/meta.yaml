@@ -23,6 +23,9 @@ requirements:
     - cmake
     - ninja
     - pkg-config
+    # needed native build tools for sdrplay_api activation script
+    - curl *
+    - p7zip  # [unix]
   host:
     - sdrplay_api
     - soapysdr
