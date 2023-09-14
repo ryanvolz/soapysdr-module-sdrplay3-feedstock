@@ -19,13 +19,11 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - 7zip  # [win]
     - cmake
     - ninja
-    - p7zip  # [unix]
     - pkg-config
-    - wget  # [unix]
   host:
+    - sdrplay_api
     - soapysdr
 
 test:
@@ -43,9 +41,9 @@ about:
   home: https://github.com/pothosware/SoapySDRPlay3/wiki
   license: MIT
   license_file: LICENSE.txt
-  summary: 'Soapy SDR plugin for SDRPlay APIv3'
+  summary: 'Soapy SDR plugin for SDRplay APIv3'
   description: |
-    The Soapy SDRPlay project provides a plugin module to use SDRPlay radio
+    The Soapy SDRplay project provides a plugin module to use SDRplay radio
     devices within the SoapySDR API and software that supports SoapySDR.
   doc_url: https://github.com/pothosware/SoapySDRPlay3/wiki
   dev_url: https://github.com/pothosware/SoapySDRPlay3
